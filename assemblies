@@ -1,9 +1,15 @@
 source /mnt/workspace/keith/anaconda3/bin/activate
-
+source /usr/local/share/anaconda2/bin/activate
+conda info --envs
 conda activate unicycler_circlator_env
+
+
 
 ##paired reads
 nohup unicycler -1 Illumina1.fastq -2 Illumina.fastq -l  pacbio.fastq -o outputname-hybrid -t 10 --mode bold --start_genes ../DnaA-genes.faa --start_gene_id 80 --start_gene_cov 80 &
 
 ##To display all headers in a given fasta file 
 grep "^>" assembly.fasta
+
+##pfam scan. File must be in .fas format
+./pfamA37-scan.sh example example_output 1 12
